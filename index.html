@@ -4,21 +4,187 @@
 
 <head>
     <title>My first website! heh</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="this is a test website">
+    <meta name="keywords" content="funny, test, ok">
+    <meta name="author" content="lil AQ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="refresh" content="10">-->
 </head>
 
-<body>
+<body style="background-color:lightgoldenrodyellow">
     <!--ts a comment-->
     <h1>this is my website ig</h1>
+    <p>I am <span style="color: red;"><big><b>GAY</b></big></span></p>
+    <i>pisses on <b>YOU</b></i> <br>
+    e<sup>x</sup> and log<sub>e</sub>x <br>
+    <mark><del>maxstein files</del></mark>
     <hr>
     <h1>fortnite</h1>
     <h2>fortnite</h2>
     <h3>fortnite</h3>
-    <h4>fortnite</h4>
-    <h5>fortnite</h5>
-    <h6>fortnite</h6>
+    <div style="color: blue;">
+        <h4>fortnite</h4>
+        <h5>fortnite</h5>
+        <h6>fortnite</h6>
+    </div>
     <br>
     <p>At the crossroads turn right..</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aliquid libero alias quas corporis labore quidem ut accusantium. Voluptatem enim commodi deserunt in? Sed quod accusantium eaque est modi soluta!</p>
+    <p style="background-color: black; color: greenyellow;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Distinctio aliquid libero alias quas corporis labore
+        quidem ut accusantium. Voluptatem enim commodi deserunt in? Sed quod accusantium eaque est modi soluta!</p>
+
+    <h3>MCSR sub 20 holders</h3>
+    <ul>
+        <li>Max</li>
+        <li>Boyan</li>
+        <li>Oscar</li>
+        <li>Anson
+            <ul>
+                <li>Quan</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Lil AQ daily routine</h3>
+    <ol>
+        <li>poop</li>
+        <li>mcsr</li>
+        <li>shower</li>
+        <li>eat</li>
+        <li><del>study</del></li>
+    </ol>
+
+    <h3>AQ slang</h3>
+    <dl>
+        <dt>PJH</dt>
+        <dd>Project Hail Mary</dd>
+        <dt>ts</dt>
+        <dd>this</dd>
+        <dt>boxed like a fish</dt>
+        <dd>ok</dd>
+    </dl>
+
+    <h3>Lil AQ's April 7 2026 Schedule</h3>
+    <table bgcolor="black" width="600">
+        <tr bgcolor="grey">
+            <th width="100">7AM</th>
+            <th width="100">8AM</th>
+            <th width="100">9AM</th>
+            <th width="100">10AM</th>
+            <th width="100">11AM</th>
+            <th width="100">12PM</th>
+        </tr>
+        <tr bgcolor="lightgrey" align="center">
+            <td>Wake up</td>
+            <td>Arrive at school</td>
+            <td>Camp in bakery</td>
+            <td>Go home</td>
+            <td>Eat McDonalds</td>
+            <td>Learn HTML</td>
+        </tr>
+    </table> <br><br>
+
+    <iframe src="https://en.wikipedia.org/wiki/Max_Huang" height="300" width="600"></iframe> <br>
+
+    <a href="https://playvalorant.com/en-us/" target=_blank title="open trash?">
+        <button style="background-color: darkslategray; color: white; border-radius:5px;">Press for TRASH
+            button</button>
+    </a>
+
+    <button onclick="randFunction()" border-radius:5px;">Cool button</button>
+    <p id="test">I'm uncool</p>
+
+    <script>
+        function randFunction() {
+            document.getElementById("test").innerHTML = "I'm super cool now";
+        }
+    </script>
+
+    <form action="action_page.php" method="POST">
+        <div>
+            <label for="username">Asername: </label>
+            <input type="text" id="username" name="username" placeholder="Your username" required>
+        </div><br>
+
+        <div>
+            <label for="age">Age: </label>
+            <input type="text" id="age" name="age" placeholder="Your age" required>
+        </div><br>
+
+        <div>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday" required>
+        </div> <br>
+
+        <div>
+            <label for="poop">Number of Jophy poops</label>
+            <input type="number" name="poop" id="poop" required min="0">
+        </div>
+
+        <div> <br>
+            <label for="file">YOUR id</label>
+            <input type="file" name="file" id="file" required>
+        </div> <br>
+
+        <div>
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="pass" placeholder="Input password" required maxlength="12">
+        </div> <br>
+
+        <div>
+            <label for="choice">Favorite name:</label>
+
+            <label for="Jeffrey">Jeffrey</label>
+            <input type="radio" id="Jeffrey" name="choice" value="Jeffrey">
+
+            <label for="Breadpeace">Breadpeace</label>
+            <input type="radio" id="Breadpeace" name="choice" value="Breadpeace">
+
+            <label for="Danger">Danger</label>
+            <input type="radio" id="Danger" name="choice" value="Danger">
+        </div> <br>
+
+        <div>
+            <label for="dropdown">Achoo!</label>
+            <select id="dropdown" name="dropdown">
+                <option value="ok">ok</option>
+                <option value="bless">bless you</option>
+                <option value="die">die</option>
+                <option value="middle">🖕</option>
+            </select>
+        </div><br>
+
+        <div>
+            <label for="gay">Gay?</label>
+            <input type="checkbox" name="gay" id="gay">
+        </div><br>
+
+        <div>
+            <input type="reset">
+        </div><br>
+
+        <div>
+            <input type="submit">
+        </div>
+
+    </form>
+
+    <h3>CLICK ME ↓ (TransMax)</h3>
+    <a href="https://www.youtube.com/watch?v=Y8nSohw8Lik">
+        <img src="Media/transMax.png" height="200" width="500" title="TransMax..." alt="TransMax">
+    </a>
+
+    <audio controls loop>
+        <source src="Media/Bird.mp3">
+        <source src="Media/Superman.mp3">
+        This browser does not support HTML audio or something
+    </audio>
+    <br>
+    <img src="Media/Tungtung.gif" height="300">
+
+    <video controls loop src="Media/maxedit.mp4" height="300"></video>
+
     <br>
     <a href="https://youtube.com" target=_blank title="open youtube?">
         youtube
@@ -30,7 +196,9 @@
     <br>
     <a href="mailto:ansonq8@gmail.com" target=_blank title="email lil AQ">
         email me
-    </a>
+    </a> <br>
+
+    <iframe style="border:0" src="ad.html" height="250" width="300"></iframe>
 </body>
 
 </html>
