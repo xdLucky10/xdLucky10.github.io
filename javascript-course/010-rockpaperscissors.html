@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Rock Paper Scissors</title>
+  <style>
+    body {
+      background-color: rgb(25, 25, 25);
+      color: white;
+      font-family: Arial;
+    }
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .move-icon {
+      height: 40px;
+    }
+
+    .move-button {
+      border: 2px solid white;
+      border-radius: 50%;
+      background-color: transparent;
+      width: 120px;
+      height: 120px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .css-result {
+      font-weight: bold;
+      font-size: 25px;
+      margin-top: 50px;
+    }
+
+    .score {
+      margin-top: 60px;
+    }
+
+    .reset-score-button {
+      background-color: white;
+      padding: 8px 15px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p class="title">Rock Paper Scissors</p>
+  <button onclick="
+    getMove('Rock');
+  " class="move-button"><img src="Images/rock-emoji.png" class="move-icon"></button>
+  <button onclick="
+    getMove('Paper');
+  " class="move-button"><img src="Images/paper-emoji.png" class="move-icon"></button>
+  <button onclick="
+    getMove('Scissors');
+  " class="move-button"><img src="Images/scissors-emoji.png" class="move-icon"></button>
+
+  <p class="result css-result"></p>
+  <p class="chosen-moves">
+  <p class="js-score score"></p></p>
+
+  <button onclick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateText();
+  " class="reset-score-button">Reset score</button>
+
+  <script>
+    let score = JSON.parse(localStorage.getItem('score')) || {
+      wins: 0,
+      losses: 0,
+      ties: 0
+    };
+
+    updateText();
+
+    function getMove(move) {
+      const randNumber = Math.random();
+      let computerMove = '';
+      let result = '';
+
+      if (randNumber >= 0 && randNumber < 1 / 3) {
+        computerMove = 'Rock';
+      } else if (randNumber >= 1 / 3 && randNumber < 2 / 3) {
+        computerMove = 'Paper';
+      } else {
+        computerMove = 'Scissors';
+      }
+
+      if (move === computerMove) {
+        result = 'Tie game!';
+        score.ties++;
+      } else if ((move === 'Rock' && computerMove === 'Scissors') || (move === 'Scissors' && computerMove === 'Paper') || (move === 'Paper' && computerMove === 'Rock')) {
+        result = 'You win!';
+        score.wins++;
+      } else {
+        result = 'You lose!';
+        score.losses++;
+      }
+
+      updateText();
+      document.querySelector('.result').innerHTML = result;
+      document.querySelector('.chosen-moves').innerHTML = `Player move: <img src="Images/${move}-emoji.png" class="move-icon"> | Computer move: <img src="Images/${computerMove}-emoji.png" class="move-icon">`;
+      localStorage.setItem('score', JSON.stringify(score));
+      //alert(result + ' | Player move: ' + move + " | Computer move: " + computerMove + `\nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    }
+
+    function updateText() {
+      document.querySelector('.js-score').innerHTML = `\nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+    }
+  </script>
+</body>
+
+</html>

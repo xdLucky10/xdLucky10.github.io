@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Calculator</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <p>Calculator</p>
+  <p class="calculation"></p>
+
+  <p>
+    <button onclick="
+    addElement('1');
+    ">1</button>
+
+    <button onclick="
+    addElement('2');
+    ">2</button>
+
+    <button onclick="
+    addElement('3');
+    ">3</button>
+
+    <button onclick="
+    addElement(' + ');
+    ">+</button>
+  </p>
+
+<p>
+    <button onclick="
+    addElement('4');
+    ">4</button>
+
+    <button onclick="
+    addElement('5');
+    ">5</button>
+
+    <button onclick="
+    addElement('6');
+    ">6</button>
+
+    <button onclick="
+    addElement(' - ');
+    ">-</button>
+  </p>
+
+<p>
+    <button onclick="
+    addElement('7');
+    ">7</button>
+
+    <button onclick="
+    addElement('8');
+    ">8</button>
+
+    <button onclick="
+    addElement('9');
+    ">9</button>
+
+    <button onclick="
+    addElement(' * ');
+    ">*</button>
+  </p>
+
+  <p>
+    <button onclick="
+    addElement('0');
+    ">0</button>
+
+    <button onclick="
+    addElement('.')
+    ">.</button>
+
+    <button onclick="
+    calculation = eval(calculation);
+    console.log(calculation);
+    updateCalculation();
+    ">=</button>
+
+    <button onclick="
+      addElement(' / ')
+    ">/</button>
+  </p>
+
+  <button onclick="
+    calculation = '';
+    updateCalculation();
+  ">Clear</button>
+
+  <script>
+
+    let calculation = JSON.parse(localStorage.getItem('calculation')) || ' ';
+
+    updateCalculation();
+
+    function updateCalculation(){
+      const calculationText = document.querySelector('.calculation');
+      calculationText.innerHTML = calculation;
+      localStorage.setItem('calculation', JSON.stringify(calculation));
+    }
+
+    function addElement(symbol){
+        calculation += symbol;
+        console.log(calculation);
+        updateCalculation();
+    }
+  </script>
+</body>
+
+</html>
